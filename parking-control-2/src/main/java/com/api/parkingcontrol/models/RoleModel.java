@@ -2,12 +2,16 @@ package com.api.parkingcontrol.models;
 
 import com.api.parkingcontrol.enums.RoleName;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "TB_ROLE")
+@Getter
+@Setter
 public class RoleModel implements GrantedAuthority {
 
     @Id
@@ -20,21 +24,5 @@ public class RoleModel implements GrantedAuthority {
     @Override
     public String getAuthority() {
         return this.roleName.toString();
-    }
-
-    public UUID getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(UUID roleId) {
-        this.roleId = roleId;
-    }
-
-    public RoleName getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(RoleName roleName) {
-        this.roleName = roleName;
     }
 }
