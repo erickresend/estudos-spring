@@ -73,7 +73,7 @@ public class ParkingSpotController {
         Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findById(id);
         if (parkingSpotModelOptional.isPresent()) {
             parkingSpotService.delete(parkingSpotModelOptional.get());
-            return ResponseEntity.status(HttpStatus.OK).body("Parking Spot deleted successfuly.");
+            return ResponseEntity.status(HttpStatus.OK).body("Parking Spot deleted successfully.");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Parking Spot not found.");
         }
