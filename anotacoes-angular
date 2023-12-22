@@ -1,0 +1,33 @@
+-Criar novo projeto
+ng new nome-do-projeto
+ng new --no-standalone nome-do-projeto
+
+-Documentacao
+angular.io
+
+-Criar novo modulo
+ng generate module nome-do-modulo
+ ng g m nome-do-modulo
+ ng g m nome-do-modulo --routing
+
+-Criar interface
+ng g interface pasta/pasta/nome-da-interface
+
+-Criar service
+ng g service ...
+
+-Mudar a versao do cli
+npm uninstall -g @angular/cli
+npm cache clean
+npm cache verify
+npm cache clean --force
+npm install -g @angular/cli@12.2.2 <- escolher a versao
+ng version
+
+## LINKS
+
+-Usar partes de páginas já criadas
+https://material.angular.io/
+
+-Pegar esquema de cores
+https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors
