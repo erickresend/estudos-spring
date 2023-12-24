@@ -1,0 +1,4 @@
+## For
+Angular
+Dentro da tag *ngFor="let variavelLocal" of "listaASerPercorrida"
+{{ variavelLocal }}

@@ -1,3 +1,5 @@
+## COMANDOS
+
 -Criar novo projeto
 ng new nome-do-projeto
 ng new --no-standalone nome-do-projeto
@@ -23,6 +25,10 @@ npm cache verify
 npm cache clean --force
 npm install -g @angular/cli@12.2.2 <- escolher a versao
 ng version
+
+## OBSERVACOES
+
+- Na criação de um componente, é criado uma pagina html, mas caso o codigo html tenha ate 3 linhas, pode se fazer dentro do ts usando template dentro do @Component
 
 ## LINKS
 
