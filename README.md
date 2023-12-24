@@ -1,6 +1,6 @@
 # MEUS ESTUDOS DO SPRING FRAMEWORK
 
-### parking-control
+### API de Controle de vagas de estacionamento
 - Nesse mini curso foi feito uma API para controle de vagas de estacionamento de um condomínio. [Vídeo](https://www.youtube.com/watch?v=LXRU-Z36GEU)
 - [x] Criamos model e repository para criar a tabela no banco de dados postgreSQL.
 - [x] Criamos service e controller para criar os endpoints.
@@ -15,3 +15,15 @@
 - [x] Tudo testado no postman
 
 - [x] No curso não teve endpoints para criação de usuários e listagem de funções, então implementei sozinho para deixar a API mais completa.
+
+### API de Lista de tarefas
+- Nesse curso está sendo criado uma API de lista de tarefas. [playlist](https://www.youtube.com/playlist?list=PLiXotHlANc8ptwP6wajo73OZo9Nh5i597)
+- [x] Criamos toda a estrutura MVC, acesso ao banco H2, criação dos endpoits para CRUD no padrão REST e testes no Postman
+- [x] Configuração do Cors 
+- [x] Front end bem básico
+- [] Curso ainda não finalizado porque aindanão quis avançar no conteúdo abordado, vou focar um pouco no Angular para ter conhecimento em fazer um front end para minhas APIs.
+
+### API de Lista de tarefas
+- Outro curso de lista de tarefas, decidi fazer dois para ver como duas pessoas escrevem o mesmo tipo de código. [playlist](https://www.youtube.com/playlist?list=PL_pqVN-1MnwMScqW3AnPR0oA2SiBy0d2_)
+- [x] Criamos toda a estrutura MVC, acesso ao banco H2, criação dos endpoits para CRUD no padrão REST e testes no Postman
+- [] No curso ela vai abordar documentação com Swagger e Deploy no horuko, mas decide pausar o curso para focar no Angular.
