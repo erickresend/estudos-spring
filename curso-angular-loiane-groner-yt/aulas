@@ -1,0 +1,2 @@
+## Aula 07
+Foi falado sobre a divisao entre component e service, que o component é usado para tratar a manipulação da página e o service para a logica de acesso ao banco/api. Injeção de dependencia do service via construtor do component podendo assim retornar a logica passada, e nao esquecer de adicionar no providers do modulo, caso nao tenha tem que criar.
