@@ -10,3 +10,7 @@
 .alert-danger{
   background-color: red;
 }
+.highlight{
+  background-color: yellow;
+  font-weight: bold;
+}

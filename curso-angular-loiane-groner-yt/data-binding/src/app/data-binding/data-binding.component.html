@@ -41,3 +41,31 @@
     </div>
   </article>
 </section>
+
+<section class="event-binding">
+
+  <article>
+
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="botaoClicado()">Me clique!</button>
+      <br><br>
+
+      <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor($any($event.target).value)"
+        (blur)="salvarValor($any($event.target).value)"
+        >
+
+      <p>Valor atual: {{valorAtual}}</p>
+      <p>Valor salvo: {{valorSalvo}}</p>
+      <span
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver"
+        >Passe o mouse sobre mim</span>
+    </div>
+
+  </article>
+
+</section>
