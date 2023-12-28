@@ -18,6 +18,8 @@ ng g interface pasta/pasta/nome-da-interface
 -Criar service
 ng g service ...
 
+ng g environments
+
 -Mudar a versao do cli
 npm uninstall -g @angular/cli
 npm cache clean

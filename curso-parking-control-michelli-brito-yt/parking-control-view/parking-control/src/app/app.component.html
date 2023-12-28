@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <span>Controle de estacionamento</span>
+</mat-toolbar>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>parkingSpotNumber</th>
+      <th>licensePlateCar</th>
+      <th>brandCar</th>
+      <th>modelCar</th>
+      <th>colorCar</th>
+      <th>registrationDate</th>
+      <th>responsibleName</th>
+      <th>apartment</th>
+      <th>block</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parkingSpot of parkingSpots">
+      <td> {{ parkingSpot.id }} </td>
+      <td> {{ parkingSpot.parkingSpotNumber }} </td>
+      <td> {{ parkingSpot.licensePlateCar }} </td>
+      <td> {{ parkingSpot.brandCar }} </td>
+      <td> {{ parkingSpot.modelCar }} </td>
+      <td> {{ parkingSpot.colorCar }} </td>
+      <td> {{ parkingSpot.registrationDate }} </td>
+      <td> {{ parkingSpot.responsibleName }} </td>
+      <td> {{ parkingSpot.apartment }} </td>
+      <td> {{ parkingSpot.block }} </td>
+    </tr>
+  </tbody>
+</table>

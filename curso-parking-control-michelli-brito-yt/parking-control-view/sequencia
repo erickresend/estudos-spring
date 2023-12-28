@@ -1,0 +1,7 @@
+Criei model para criar a interface do que vai receber da api
+Criei service, para fazer a logica de acesso a api
+Criei um environments para indicar a url da api, no environment 
+    ficou vazio e no environments.development que colocou a api,
+    pelo que entendi ele faz essa replace, mas nao sei pq
+Tem que fazer a injeção do service no contrutor do component para
+    poder chamar o metodos do CRUD

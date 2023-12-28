@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'data-binding';
+
+  valor: number = 5;
+
+  mudarValor(){
+    this.valor++;
+  }
 }
