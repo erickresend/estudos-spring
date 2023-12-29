@@ -1,34 +1,112 @@
 <mat-toolbar color="primary">
-  <span>Controle de estacionamento</span>
+  <span>CONTROLE DE ESTACIONAMENTO</span>
 </mat-toolbar>
 
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>parkingSpotNumber</th>
-      <th>licensePlateCar</th>
-      <th>brandCar</th>
-      <th>modelCar</th>
-      <th>colorCar</th>
-      <th>registrationDate</th>
-      <th>responsibleName</th>
-      <th>apartment</th>
-      <th>block</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let parkingSpot of parkingSpots">
-      <td> {{ parkingSpot.id }} </td>
-      <td> {{ parkingSpot.parkingSpotNumber }} </td>
-      <td> {{ parkingSpot.licensePlateCar }} </td>
-      <td> {{ parkingSpot.brandCar }} </td>
-      <td> {{ parkingSpot.modelCar }} </td>
-      <td> {{ parkingSpot.colorCar }} </td>
-      <td> {{ parkingSpot.registrationDate }} </td>
-      <td> {{ parkingSpot.responsibleName }} </td>
-      <td> {{ parkingSpot.apartment }} </td>
-      <td> {{ parkingSpot.block }} </td>
-    </tr>
-  </tbody>
+<form class="form">
+  <div>
+    <mat-form-field>
+      <mat-label>Número da vaga</mat-label>
+      <input matInput [(ngModel)]="parkingSpotNumberInput" name="parkingSpotNumberInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Placa</mat-label>
+      <input matInput [(ngModel)]="licensePlateCarInput" name="licensePlateCarInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <input matInput [(ngModel)]="brandCarInput" name="brandCarInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input matInput [(ngModel)]="modelCarInput" name="modelCarInput">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Cor</mat-label>
+      <input matInput [(ngModel)]="colorCarInput" name="colorCarInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Responsável</mat-label>
+      <input matInput [(ngModel)]="responsibleNameInput" name="responsibleNameInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apartamento</mat-label>
+      <input matInput [(ngModel)]="apartmentInput" name="apartmentInput">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bloco</mat-label>
+      <input matInput [(ngModel)]="blockInput" name="blockInput">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="buttonCreateUpdate()"> {{idInput ? 'Editar' : 'Criar' }} </button>
+</form>
+
+<table mat-table [dataSource]="parkingSpots$" class="mat-elevation-z8" class="table">
+
+  <!-- parkingSpotNumber Column -->
+  <ng-container matColumnDef="parkingSpotNumber">
+    <th mat-header-cell *matHeaderCellDef> Número da vaga </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.parkingSpotNumber}} </td>
+  </ng-container>
+
+  <!-- licensePlateCar Column -->
+  <ng-container matColumnDef="licensePlateCar">
+    <th mat-header-cell *matHeaderCellDef> Placa </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.licensePlateCar}} </td>
+  </ng-container>
+
+  <!-- brandCar Column -->
+  <ng-container matColumnDef="brandCar">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.brandCar}} </td>
+  </ng-container>
+
+  <!-- modelCar Column -->
+  <ng-container matColumnDef="modelCar">
+    <th mat-header-cell *matHeaderCellDef> Modelo </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.modelCar}} </td>
+  </ng-container>
+
+  <!-- colorCar Column -->
+  <ng-container matColumnDef="colorCar">
+    <th mat-header-cell *matHeaderCellDef> Cor </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.colorCar}} </td>
+  </ng-container>
+
+  <!-- registrationDate Column -->
+  <ng-container matColumnDef="registrationDate">
+    <th mat-header-cell *matHeaderCellDef> Data do registro </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.registrationDate}} </td>
+  </ng-container>
+
+  <!-- responsibleName Column -->
+  <ng-container matColumnDef="responsibleName">
+    <th mat-header-cell *matHeaderCellDef> Reponsável </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.responsibleName}} </td>
+  </ng-container>
+
+  <!-- apartment Column -->
+  <ng-container matColumnDef="apartment">
+    <th mat-header-cell *matHeaderCellDef> Apartamento </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.apartment}} </td>
+  </ng-container>
+
+  <!-- block Column -->
+  <ng-container matColumnDef="block">
+    <th mat-header-cell *matHeaderCellDef> Bloco </th>
+    <td mat-cell *matCellDef="let parkingSpot"> {{parkingSpot.block}} </td>
+  </ng-container>
+
+  <!-- block Column -->
+  <ng-container matColumnDef="update">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let parkingSpot">
+      <button class="ButtonList" mat-raised-button color="primary" (click)="fillInFilds(parkingSpot)">Alterar</button>
+      <button class="ButtonList" mat-raised-button color="warn" (click)="deleteParkingSpot(parkingSpot.id)">Deletar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

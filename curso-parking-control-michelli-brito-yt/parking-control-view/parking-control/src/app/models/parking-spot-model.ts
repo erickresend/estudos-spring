@@ -1,6 +1,6 @@
 export interface ParkingSpotModel {
 
-  id?: string,
+  id?: any,
   parkingSpotNumber: string,
   licensePlateCar: string,
   brandCar: string,

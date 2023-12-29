@@ -9,7 +9,7 @@ import { ParkingSpotModel } from '../models/parking-spot-model';
 export class ParkingSpotService {
 
   //Apagar a parte do develpment do import
-  private url = environment.api
+  private url = `${environment.api}/parking-spot`
 
   //Tem que importar o HttpClientModule no module
   constructor(private httpClient: HttpClient) {
@@ -17,7 +17,20 @@ export class ParkingSpotService {
   }
 
   getParkingSpots(){
-    return this.httpClient.get<ParkingSpotModel[]>(this.url + "/parking-spot")
+    return this.httpClient.get<ParkingSpotModel[]>(this.url)
+  }
+
+  createParkingSpot(parkingSpot: ParkingSpotModel){
+    return this.httpClient.post<ParkingSpotModel>(this.url, parkingSpot)
+  }
+
+  updateParkingSpot(parkingSpot: ParkingSpotModel, id : string){
+    return this.httpClient.put<ParkingSpotModel>(`${this.url}/${id}`, parkingSpot)
+  }
+
+  deleteParkingSpot(id : string){
+    console.log("to aqui tbm" + id)
+    return this.httpClient.delete<void>(`${this.url}/${id}`)
   }
 
 }
